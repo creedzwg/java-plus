@@ -12,6 +12,7 @@ import java.net.Socket;
  */
 public class SocketClientDemo {
 
+
     public static void main(String[] args) throws IOException, InterruptedException {
         Socket socket = new Socket("127.0.0.1", 6778);
         OutputStream outputStream = socket.getOutputStream();
