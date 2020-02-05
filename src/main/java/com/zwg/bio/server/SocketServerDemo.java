@@ -13,14 +13,13 @@ import java.util.concurrent.Executors;
  * @date 2020/2/5 17:03
  * @description :
  */
-public class SockerServerDemo {
+public class SocketServerDemo {
 
     public static void main(String[] args) throws IOException {
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         ServerSocket serverSocket = new ServerSocket(6778);
         while (!Thread.currentThread().isInterrupted()){
-            System.out.println("服务器启动成功!");
            final Socket accept = serverSocket.accept();
             System.out.println("客户端连接成功!");
 
@@ -39,16 +38,18 @@ public class SockerServerDemo {
 
     private static void handle(Socket accept) {
        try {
+           System.out.println(Thread.currentThread().getName());
            InputStream inputStream = accept.getInputStream();
 
            byte[] bytes = new byte[1024];
 
            while (!Thread.currentThread().isInterrupted()){
+               System.out.println("222"+Thread.currentThread().getName());
                int flag;
                while ((flag=inputStream.read(bytes))!=-1){
+
                    System.out.println(new String(bytes,0,flag));
                }
-
            }
 
 
