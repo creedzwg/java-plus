@@ -1,12 +1,9 @@
-package com.example.demo.nio;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
+package com.zwg.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
-import java.util.stream.IntStream;
 
 /**
  * @author zwg
