@@ -15,12 +15,12 @@ public class SocketClientDemo {
     public static void main(String[] args) throws IOException, InterruptedException {
         Socket socket = new Socket("127.0.0.1", 6778);
         OutputStream outputStream = socket.getOutputStream();
-
-
-       while (true){
-           Thread.sleep(3000);
-           outputStream.write("aahahahah".getBytes());
-       }
+        byte[] bytes = "wert34343xzxzq切尔奇二二翁2亲亲我群无12122121".getBytes("UTF-8");
+        System.out.println(bytes.length);
+        outputStream.write(bytes);
+        System.in.read();
+        Thread.sleep(5000);
+        outputStream.close();
 
 
     }

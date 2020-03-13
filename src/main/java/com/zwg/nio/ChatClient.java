@@ -18,10 +18,11 @@ public class ChatClient {
 
 
 
-        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(6666));
-        socketChannel.configureBlocking(false);
-        String s="hello ,我来自客户端一号";
-        socketChannel.write(ByteBuffer.wrap(s.getBytes()));
+//        SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(6666));
+//        socketChannel.configureBlocking(false);
+//        String s="hello ,我来自客户端一号";
+//        socketChannel.write(ByteBuffer.wrap(s.getBytes()));
+//        socketChannel.read();
 
 //        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 //        int write = socketChannel.write(byteBuffer);
