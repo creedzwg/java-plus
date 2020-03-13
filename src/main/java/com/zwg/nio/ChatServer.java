@@ -1,5 +1,6 @@
 package com.zwg.nio;
 
+import java.awt.image.Kernel;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -46,7 +47,7 @@ public class ChatServer {
                 if (next.isAcceptable()){
                     //是已经准备好连接事件
                     //获取到对应的socketChannel
-                    SocketChannel socketChannel = serverSocketChannel.accept();
+                    SocketChannel socketChannel = ((ServerSocketChannel) next.channel()).accept();
                     System.out.println("获取到客户端连接"+socketChannel);
                     socketChannel.configureBlocking(false);
                     //将socketChannel注册到select中去,并关联为OP_READ,同时给给socketChannel关联一个buffer
